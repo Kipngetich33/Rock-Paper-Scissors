@@ -1,7 +1,4 @@
-const outcome = 1
-
-const  [forAlice, forBob] = outcome == 2 ? [ 1, 0]:outcome == 0 ? [ 0, 2]:[ 1, 1];
-
+const [isHand, ROCK, PAPER , SCISSORS ] = makeEnum(3);
 
 console.log(forBob)
 
