@@ -8,7 +8,7 @@ const winner = (handAlice, handBob) =>
 
 assert(winner(ROCK, PAPER) == B_WINS);
 assert(winner(PAPER, ROCK) == A_WINS);
-assert(winner(ROCK, ROCK) == A_WINS);
+assert(winner(ROCK, ROCK) == DRAW);
 
 forall(UInt, handAlice => 
     forall(UInt, handBob => 
