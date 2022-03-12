@@ -11,7 +11,7 @@ const who = isAlice ? 'Alice' : 'Bob';
 console.log(`Starting Rock, Paper, Scissors! as ${who}`);
 
 let acc = null;
-const creatAcc = await ask.ask(
+const createAcc = await ask.ask(
     `Would you like to create an account? (only possible on devnet)`,
     ask.yesno
 );
@@ -29,7 +29,7 @@ let ctc = null;
 if(isAlice) {
     ctc = acc.contract(backend);
     ctc.getInfo().then((info) => {
-        console.log(`The contract is deployes as = ${JSON.stringify(info)}`)});
+        console.log(`The contract is deployed as = ${JSON.stringify(info)}`)});
 }else{
     const info = await ask.ask(
         `Please paste the contract information:`,
@@ -85,7 +85,7 @@ interact.getHand = async () => {
         }
         return hand;
     });
-    console.log(`You played ${hand}`);
+    console.log(`You played ${HAND[hand]}`);
     return hand;
 };
 
@@ -98,6 +98,6 @@ const part = isAlice ? ctc.p.Alice : ctc.p.Bob;
 await part(interact)
 
 const after = await getBalance();
-console.log(`Yout balance is now ${after}`);
+console.log(`Your balance is now ${after}`);
 
 ask.done();
