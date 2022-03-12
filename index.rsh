@@ -28,6 +28,9 @@ export const main = Reach.App(()=>{
         .pay(wager);
     commit();
     
+    // add line that verifies that Bob doesn't know handAlice at this
+    // point of the program
+    unknowable(Bob, Alice(handAlice));
     Bob.only(() => {
         interact.acceptWager(wager);
         //honest Bob
@@ -43,7 +46,7 @@ export const main = Reach.App(()=>{
     // require(handBob == (handAlice + 1) % 3);
     // assert(outcome == 0);
     const           [forAlice, forBob] =
-        outcome == 2 ? [ 1, 0]:
+        outcome == 2 ? [ 2, 0]:
         outcome == 0 ? [ 0, 2]:
         /*tie */       [ 1, 1];
     transfer(forAlice * wager).to(Alice);
