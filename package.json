@@ -8,5 +8,8 @@
   "scripts": {
     "lint": "eslint --ignore-path .gitignore --ext .mjs .",
     "index": "node --experimental-modules --unhandled-rejections=strict index.mjs"
+  },
+  "resolve": {
+    "extensions": [".js", ".ts", ".mjs", ".json", ".wasm"]
   }
 }
